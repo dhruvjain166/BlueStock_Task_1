@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login System</title>
+    <link rel="stylesheet" href="style.css"> <!-- Linking the external CSS file -->
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sign Up Form -->
+        <div id="signup-form">
+            <h2>Sign Up</h2>
+            <input type="text" id="signup-username" placeholder="Enter Username">
+            <input type="password" id="signup-password" placeholder="Enter Password">
+            <button onclick="signup()">Sign Up</button>
+            <p class="switch">Already have an account? <a onclick="toggleForms()">Login</a></p>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form" class="hidden">
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Enter Username">
+            <input type="password" id="login-password" placeholder="Enter Password">
+            <button onclick="login()">Login</button>
+            <p class="switch">Don't have an account? <a onclick="toggleForms()">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script>
+        function signup() {
+            const username = document.getElementById("signup-username").value;
+            const password = document.getElementById("signup-password").value;
+
+            if (!username || !password) {
+                alert("Please fill in all fields!");
+                return;
+            }
+
+            alert(`Frontend only: Signup attempt with Username: ${username}`);
+        }
+
+        function login() {
+            const username = document.getElementById("login-username").value;
+            const password = document.getElementById("login-password").value;
+
+            if (!username || !password) {
+                alert("Please fill in all fields!");
+                return;
+            }
+
+            alert(`Frontend only: Login attempt with Username: ${username}`);
+        }
+
+        function toggleForms() {
+            document.getElementById("signup-form").classList.toggle("hidden");
+            document.getElementById("login-form").classList.toggle("hidden");
+        }
+    </script>
+
+</body>
+</html>
